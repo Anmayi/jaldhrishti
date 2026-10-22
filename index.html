@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JalDrishti — A community water conservation research initiative examining water scarcity, rainfall variability, groundwater stress and conservation approaches in Marathwada, Maharashtra, India.">
+  <title>JalDrishti — Water Insights for Marathwada</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts — Inter (variable weight) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="">
+
+  <!-- Leaflet tooltip label styles (injected inline to avoid CORS in file:// mode) -->
+  <style>
+    .district-map-label {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      font-size: 10px !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #0B1F3A;
+      pointer-events: none;
+    }
+    .leaflet-tooltip-left.district-map-label::before,
+    .leaflet-tooltip-right.district-map-label::before { display: none; }
+
+    /* Ensure map container is visible before Leaflet init */
+    #district-map { background: #e8eef5; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Mobile hamburger toggle -->
+  <button
+    class="mobile-nav-toggle"
+    id="mobile-nav-toggle"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="sidebar"
+  >☰</button>
+
+  <!-- Sidebar overlay (mobile) -->
+  <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- App shell -->
+  <div class="app-shell">
+
+    <!-- ========================= SIDEBAR NAV ========================= -->
+    <nav class="sidebar" id="sidebar" aria-label="Main navigation">
+      <div class="sidebar__brand">
+        <a href="#home" class="sidebar__logo" aria-label="JalDrishti home">
+          <span class="sidebar__logo-icon">💧</span>
+          <span class="sidebar__logo-text">
+            <span class="sidebar__logo-title">JalDrishti</span>
+            <span class="sidebar__logo-sub">Water Insights for Marathwada</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- Nav links injected by app.js -->
+      <div class="sidebar__nav" id="sidebar-nav"></div>
+
+      <div class="sidebar__footer">
+        Community Water Conservation Research<br>
+        Maharashtra, India<br>
+        Static data — not a live monitoring system.
+      </div>
+    </nav>
+
+    <!-- ========================= MAIN CONTENT ========================= -->
+    <main class="main-content" id="main-content">
+
+      <!-- Section A: Home / Overview -->
+      <section id="home" class="page-section section-anchor" aria-label="Home and Overview">
+        <!-- Built by app.js: buildHome() -->
+      </section>
+
+      <!-- Section B: Water Dashboard -->
+      <section id="dashboard" class="page-section section-anchor" aria-label="Water Dashboard">
+        <!-- Built by app.js: buildDashboard() -->
+      </section>
+
+      <!-- Section C: Explore Marathwada -->
+      <section id="explore" class="page-section section-anchor" aria-label="Explore Marathwada Districts">
+        <!-- Built by app.js: buildExplore() -->
+      </section>
+
+      <!-- Section D: Sources of Water Loss -->
+      <section id="water-loss" class="page-section section-anchor" aria-label="Sources of Water Loss">
+        <!-- Built by app.js: buildWaterLoss() -->
+      </section>
+
+      <!-- Section E: Case Studies -->
+      <section id="case-studies" class="page-section section-anchor" aria-label="Global and Indian Case Studies">
+        <!-- Built by app.js: buildCaseStudies() -->
+      </section>
+
+      <!-- Section F: Research & Methodology -->
+      <section id="research" class="page-section section-anchor" aria-label="Research and Methodology">
+        <!-- Built by app.js: buildResearch() -->
+      </section>
+
+      <!-- Section G: References -->
+      <section id="references" class="page-section section-anchor" aria-label="Sources and References">
+        <!-- Built by app.js: buildReferences() -->
+      </section>
+
+      <!-- Site footer -->
+      <footer id="site-footer" role="contentinfo">
+        <!-- Built by app.js: buildFooter() -->
+      </footer>
+
+    </main><!-- /main-content -->
+  </div><!-- /app-shell -->
+
+  <!-- ========================= SCRIPTS ========================= -->
+
+  <!--
+    Load order:
+    1. Chart.js (UMD, sets window.Chart)
+    2. Leaflet (UMD, sets window.L)
+    3. Our ES modules (type="module" defers automatically)
+
+    We use integrity hashes where available for CDN resources.
+    ES modules are loaded after CDN scripts because module scripts
+    are deferred by default and run after DOMContentLoaded.
+    This means Chart and L are available when charts.js / map.js run.
+  -->
+
+  <!-- Chart.js 4 -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"
+    integrity="sha256-s4B2di9zY7yekStouOA0gmeY213ya7YfAA7C56MTe8c="
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN2GQnk="
+    crossorigin=""
+  ></script>
+
+  <!-- App — ES module entry point -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>

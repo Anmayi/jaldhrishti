@@ -1,0 +1,106 @@
+/* ============================================================
+   variables.css — JalDrishti Design Tokens
+   ============================================================ */
+
+:root {
+  /* --- Colour palette --- */
+  --color-navy:        #0B1F3A;  /* Deep navy — primary dark */
+  --color-navy-mid:    #132840;  /* Navigation background */
+  --color-navy-light:  #1A3558;  /* Hover states, borders */
+  --color-blue:        #1565C0;  /* Primary action blue */
+  --color-blue-light:  #1E88E5;  /* Lighter blue for charts, links */
+  --color-teal:        #00897B;  /* Accent teal — conservation theme */
+  --color-teal-light:  #26A69A;  /* Lighter teal */
+  --color-amber:       #F9A825;  /* Warning / drought highlight */
+  --color-red-soft:    #E53935;  /* Alert / loss */
+  --color-green-soft:  #43A047;  /* Success / restored */
+
+  /* --- Backgrounds --- */
+  --bg-page:           #F0F4F8;  /* Very light slate-blue page bg */
+  --bg-card:           #FFFFFF;  /* Card surface */
+  --bg-card-alt:       #EEF2F7;  /* Alternate card bg */
+  --bg-section-dark:   #0B1F3A;  /* Dark hero / footer sections */
+  --bg-section-mid:    #E8EEF5;  /* Mid-toned section alternation */
+
+  /* --- Text --- */
+  --text-primary:      #1A202C;  /* Near-black body text */
+  --text-secondary:    #4A5568;  /* Secondary / meta text */
+  --text-muted:        #718096;  /* Captions, placeholders */
+  --text-inverse:      #FFFFFF;  /* Text on dark backgrounds */
+  --text-link:         #1565C0;  /* Hyperlinks */
+  --text-link-hover:   #1E88E5;
+
+  /* --- Typography --- */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg:   1.125rem;   /* 18px */
+  --text-xl:   1.25rem;    /* 20px */
+  --text-2xl:  1.5rem;     /* 24px */
+  --text-3xl:  1.875rem;   /* 30px */
+  --text-4xl:  2.25rem;    /* 36px */
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semi:    600;
+  --weight-bold:    700;
+
+  --leading-tight:  1.25;
+  --leading-normal: 1.6;
+  --leading-loose:  1.8;
+
+  /* --- Spacing scale --- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* --- Borders & Radius --- */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-full: 9999px;
+
+  --border-light: 1px solid #DDE3EC;
+  --border-mid:   1px solid #C3CDD9;
+
+  /* --- Shadows --- */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg:  0 10px 30px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.06);
+
+  /* --- Transitions --- */
+  --transition-fast:   150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* --- Z-index scale --- */
+  --z-base:    1;
+  --z-nav:     100;
+  --z-modal:   200;
+  --z-tooltip: 300;
+
+  /* --- Layout --- */
+  --nav-width:     260px;
+  --content-max:   900px;
+  --content-wide:  1100px;
+}
+
+/* Badge colour overrides by type */
+.badge--loss            { background: #FDE8E8; color: #C62828; }
+.badge--inefficiency    { background: #FFF3E0; color: #E65100; }
+.badge--capacity        { background: #EDE7F6; color: #4527A0; }
+.badge--quality         { background: #E8F5E9; color: #1B5E20; }
+.badge--over-exploitation { background: #FCE4EC; color: #880E4F; }
