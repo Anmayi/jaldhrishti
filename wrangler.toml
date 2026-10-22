@@ -1,0 +1,10 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "jaldhrishti"
+compatibility_date = "2024-09-23"
+
+# Cloudflare Workers Static Assets configuration
+# This instructs Cloudflare Workers to serve all static assets (HTML, CSS, JS, SVG)
+[assets]
+directory = "."
+binding = "ASSETS"
+not_found_handling = "single-page-application"

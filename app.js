@@ -808,7 +808,7 @@ function buildFooter() {
   footer.innerHTML = `
     <div style="background:var(--color-navy);color:rgba(255,255,255,0.45);
                 padding:var(--space-8) var(--space-8);font-size:var(--text-xs);
-                line-height:1.7;margin-left:var(--nav-width);">
+                line-height:1.7;">
       <strong style="color:rgba(255,255,255,0.7);">JalDrishti — Water Insights for Marathwada</strong><br>
       Community water conservation research project. All statistics cite primary sources.
       Unverified figures are clearly labelled. This website does not deploy live data services.<br>
